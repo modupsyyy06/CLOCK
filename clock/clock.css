@@ -1,0 +1,128 @@
+@import url("https://fonts.googleapis.com/css2?family=Concert+One&display=swap");
+
+* {
+ margin: 0;
+ padding: 0;
+ font-family: "Concert one",cursive;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+   display: flex;
+    justify-content: center;
+    align-items:center;
+}
+
+.clock {
+    background-color:gold;
+    width: 400px;
+    height: 400px;
+    margin: 20px auto;
+    border: 8px solid #777;
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 8px 8px 16px #555, -8px -8px 16px #555;
+    
+}
+
+.numbers {
+    width: inherit;
+    height: inherit;
+    position: relative;
+}
+
+.numbers div {
+    position: absolute;
+    font-size: 40px;
+    color: #fff;
+    text-shadow: 3px 3px 3px #222;
+}
+
+.twelve {
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.three {
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.six {
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nine {
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.arrows {
+    width: inherit;
+    height: inherit;
+    position: absolute;
+    display: flex;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrows::before {
+    content: "";
+    width: 25px;
+    height: 25px;
+    background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 3px 3px 8px #777;
+    z-index: 10;
+}
+
+.arrows div {
+    position: absolute;
+    bottom: 50%;
+    box-shadow: 3px 3px 8px #777;
+    border-radius: 100% 100% 0 0;
+}
+
+.hour {
+    background-color:rgb(70, 53, 53);
+    width: 8px;
+    height: 100px;
+    animation: rotate 43200s infinite linear;
+    position: absolute;
+}
+
+.minute {
+    background-color: rgb(94, 77, 77);
+    width: 6px;
+    height: 120px;
+    animation: rotate 3600s infinite linear;
+    position: absolute;
+}
+
+.second {
+    background-color: rgb(107, 10, 10);
+    width: 4px;
+    height: 140px;
+    animation: rotate 60s infinite linear;
+    position: absolute;
+}
+
+@keyframes rotate {
+    0% {
+      transform: rotate(0);
+      transform-origin: center bottom;
+    }
+  
+    100% {
+      transform: rotate(360deg);
+      transform-origin: center bottom;
+    }
+}
